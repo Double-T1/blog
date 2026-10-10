@@ -6,3 +6,5 @@
 
 ## Starting the service locally
 1. `hugo server`
+for showing drafts
+1. `hugo server -D`

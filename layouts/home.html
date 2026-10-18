@@ -1,0 +1,15 @@
+{{ define "main" }}
+  {{ with site.Params.description }}<p class="intro">{{ . }}</p>{{ end }}
+  {{ .Content }}
+
+  {{ $posts := where site.RegularPages "Section" "posts" }}
+  {{ with $posts }}
+    <h2>Recent posts</h2>
+    {{ partial "post-list.html" (first 10 .) }}
+    {{ if gt (len .) 10 }}
+      <p><a href="{{ (site.GetPage "/posts").RelPermalink }}">All posts →</a></p>
+    {{ end }}
+  {{ else }}
+    <p class="muted">No posts yet.</p>
+  {{ end }}
+{{ end }}

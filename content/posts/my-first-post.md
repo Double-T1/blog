@@ -2,6 +2,7 @@
 date = '2026-09-05T12:47:31+08:00'
 draft = true
 title = 'My First Post'
+tags = ['hugo']
 +++
 
 ## Introduction

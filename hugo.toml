@@ -1,4 +1,29 @@
 baseURL = 'https://double-t1.github.io/blog/'
 locale = 'en-us'
-title = 'My New Hugo Project'
-theme = 'ananke'
+title = 'Double-T1'
+
+[params]
+  author = 'Double-T1'
+  description = 'Notes on things I am learning.'
+
+[taxonomies]
+  tag = 'tags'
+
+[menus]
+  [[menus.main]]
+    name = 'Posts'
+    pageRef = '/posts'
+    weight = 10
+
+  [[menus.main]]
+    name = 'Tags'
+    pageRef = '/tags'
+    weight = 20
+
+  [[menus.main]]
+    name = 'About'
+    pageRef = '/about'
+    weight = 30
+
+[markup.highlight]
+  noClasses = false

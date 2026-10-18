@@ -1,0 +1,286 @@
+:root {
+  --bg: #ffffff;
+  --fg: #1f2328;
+  --muted: #6e7781;
+  --border: #e5e7eb;
+  --link: #0a58ca;
+  --code-bg: #f6f8fa;
+
+  --syn-comment: #6e7781;
+  --syn-keyword: #cf222e;
+  --syn-string: #0a3069;
+  --syn-number: #0550ae;
+  --syn-func: #8250df;
+  --syn-tag: #116329;
+
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111214;
+    --fg: #e6e7e9;
+    --muted: #8b929a;
+    --border: #2a2d31;
+    --link: #79a8ff;
+    --code-bg: #1a1c1f;
+
+    --syn-comment: #8b949e;
+    --syn-keyword: #ff7b72;
+    --syn-string: #a5d6ff;
+    --syn-number: #79c0ff;
+    --syn-func: #d2a8ff;
+    --syn-tag: #7ee787;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  -webkit-text-size-adjust: 100%;
+}
+
+a {
+  color: var(--link);
+  text-underline-offset: 0.2em;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.3;
+}
+
+h1 {
+  font-size: 1.75rem;
+  margin: 0 0 0.5rem;
+}
+
+h2 {
+  font-size: 1.3rem;
+  margin: 2.5rem 0 0.75rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+  margin: 2rem 0 0.5rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 2.5rem 0;
+}
+
+blockquote {
+  margin: 1.5rem 0;
+  padding: 0 1rem;
+  border-left: 3px solid var(--border);
+  color: var(--muted);
+}
+
+table {
+  display: block;
+  overflow-x: auto;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 0.4rem 0.75rem;
+  border: 1px solid var(--border);
+  text-align: left;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.875em;
+}
+
+:not(pre) > code {
+  padding: 0.15em 0.35em;
+  border-radius: 4px;
+  background: var(--code-bg);
+}
+
+pre {
+  padding: 1rem 1.25rem;
+  border-radius: 6px;
+  background: var(--code-bg);
+  font-size: 0.875rem;
+  line-height: 1.55;
+  overflow-x: auto;
+}
+
+pre code {
+  font-size: inherit;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+/* Header & footer */
+
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.site-title {
+  color: var(--fg);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.site-header nav {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.site-header nav a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.site-header nav a:hover,
+.site-header nav a[aria-current] {
+  color: var(--fg);
+}
+
+.site-footer {
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+/* Lists */
+
+.intro {
+  margin-top: 0;
+  color: var(--muted);
+}
+
+.post-list,
+.tag-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.post-list li {
+  display: flex;
+  gap: 1.5rem;
+  padding: 0.3rem 0;
+}
+
+.post-list time {
+  flex-shrink: 0;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.post-list a,
+.tag-list a {
+  color: var(--fg);
+  text-decoration: none;
+}
+
+.post-list a:hover,
+.tag-list a:hover {
+  color: var(--link);
+}
+
+.tag-list li {
+  padding: 0.2rem 0;
+}
+
+.draft {
+  margin-left: 0.4rem;
+  padding: 0 0.4rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--muted);
+  font-size: 0.75rem;
+  vertical-align: middle;
+}
+
+/* Post */
+
+.meta {
+  margin: 0 0 2rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 3rem;
+}
+
+.tags a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.tags a:hover {
+  color: var(--link);
+}
+
+/* Syntax highlighting (Chroma classes) */
+
+.chroma .hl {
+  display: block;
+  background: var(--border);
+}
+
+.chroma :is(.c, .c1, .ch, .cm, .cp, .cpf, .cs) {
+  color: var(--syn-comment);
+  font-style: italic;
+}
+
+.chroma :is(.k, .kc, .kd, .kn, .kp, .kr, .kt, .ow) {
+  color: var(--syn-keyword);
+}
+
+.chroma :is(.s, .s1, .s2, .sa, .sb, .sc, .sd, .se, .sh, .si, .sr, .ss, .sx, .dl) {
+  color: var(--syn-string);
+}
+
+.chroma :is(.m, .mb, .mf, .mh, .mi, .il, .mo) {
+  color: var(--syn-number);
+}
+
+.chroma :is(.nf, .fm, .nc, .nb, .bp) {
+  color: var(--syn-func);
+}
+
+.chroma :is(.nt, .na) {
+  color: var(--syn-tag);
+}

@@ -1,0 +1,12 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  {{ with .Data.Terms.ByCount }}
+    <ul class="tag-list">
+      {{ range . }}
+        <li><a href="{{ .Page.RelPermalink }}">#{{ .Page.Data.Term }}</a> <span class="muted">{{ .Count }}</span></li>
+      {{ end }}
+    </ul>
+  {{ else }}
+    <p class="muted">No tags yet.</p>
+  {{ end }}
+{{ end }}

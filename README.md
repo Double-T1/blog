@@ -1,5 +1,8 @@
 # table of contents
 
+## URL
+https://double-t1.github.io/blog/
+
 ## Architecture
 ```mermaid
 flowchart LR

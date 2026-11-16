@@ -17,6 +17,11 @@ Kubernetes netwokring involves a few components, including the DNS server, CNI, 
 
 ## Headless
 
+### Request Time
+1. app dns resplver asks DNS server for the ip to fqdn, the server returns a list of actual pod ips.
+2. app decides which pod ip to send to
+3. Kernel intercept but finds no mapping to translate
+
 ## Introduction
 
 This **blog** is powered by *hugo*.

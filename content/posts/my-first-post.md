@@ -22,6 +22,12 @@ Kubernetes netwokring involves a few components, including the DNS server, CNI, 
 2. app decides which pod ip to send to
 3. Kernel intercept but finds no mapping to translate
 
+
+## NodeLocal DNSCache
+0. Optional, often deployed as daemonset
+1. app resolver asks nodelpcal dnscache for dns resolution
+2. Returns the response if it has the result, if not, dnscache relays the lookup to the DNS Server
+
 ## Introduction
 
 This **blog** is powered by *hugo*.

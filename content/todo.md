@@ -1,6 +1,5 @@
 +++
 title = 'TODO'
-draft = true
 +++
 
 1. pg vacuum, memory uptick

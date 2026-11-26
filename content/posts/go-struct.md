@@ -7,7 +7,7 @@ tags = ['go','performance']
 # Overview
 This is a PR review i got during work, where the sequnce of field placement affects the totla memory usage
 
-'''
+```go
 type ex1 struct {
     a int
     b string
@@ -15,9 +15,9 @@ type ex1 struct {
     d bool
     e *int
 }
-'''
+```
 
-'''
+```go
 type ex1 struct {
     a int
     d bool
@@ -25,4 +25,4 @@ type ex1 struct {
     c int64
     e *int
 }
-'''
+```
